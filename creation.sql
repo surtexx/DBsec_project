@@ -1,10 +1,9 @@
--- 4.
 CREATE TABLE SPONSOR(
-    id_sponsor NUMBER NOT NULL,
-    nume_sponsor VARCHAR2(30) NOT NULL,
-    data_expirare_contract DATE NOT NULL,
-    venit_anual NUMBER NOT NULL,
-    PRIMARY KEY (id_sponsor)
+id_sponsor NUMBER NOT NULL,
+nume_sponsor VARCHAR2(30) NOT NULL,
+data_expirare_contract DATE NOT NULL,
+venit_anual NUMBER NOT NULL,
+PRIMARY KEY (id_sponsor)
 );
 
 CREATE TABLE CAMPIONAT(
@@ -142,7 +141,6 @@ nume_jucator VARCHAR2(30) NOT NULL,
 id_echipa NUMBER NOT NULL,
 pozitie VARCHAR2(8) NOT NULL,
 id_statistici NUMBER NOT NULL,
-data_nastere_jucator DATE NOT NULL,
 picior VARCHAR2(5) NOT NULL,
 PRIMARY KEY (id_jucator),
 CONSTRAINT fk_echipa
@@ -155,21 +153,20 @@ CHECK (picior IN('stang','drept')),
 CHECK (pozitie IN ('portar','fundas','mijlocas','atacant'))
 );
 
--- 5.
 INSERT INTO SPONSOR
-VALUES(1, 'Uber Eats', '2024-06-30', 17000000);
+VALUES(1, 'Uber Eats', TO_DATE('2024-06-30', 'YYYY-MM-DD'), 17000000);
 
 INSERT INTO SPONSOR
-VALUES(2, 'Santander', '2023-06-25', 20000000);
+VALUES(2, 'Santander', TO_DATE('2023-06-25', 'YYYY-MM-DD'), 20000000);
 
 INSERT INTO SPONSOR
-VALUES(3, 'TIM', '2024-07-01', 18300000);
+VALUES(3, 'TIM', TO_DATE('2024-07-01', 'YYYY-MM-DD'), 18300000);
 
 INSERT INTO SPONSOR
-VALUES(4, 'Casa Pariurilor', '2024-06-30', 1200000);
+VALUES(4, 'Casa Pariurilor', TO_DATE('2024-06-30', 'YYYY-MM-DD'), 1200000);
 
 INSERT INTO SPONSOR
-VALUES(5, 'BWIN', '2023-06-30', 10000000);
+VALUES(5, 'BWIN', TO_DATE('2023-06-30', 'YYYY-MM-DD'), 10000000);
 
 INSERT INTO CAMPIONAT
 VALUES(1, null, 'Anglia', 1992, 1);
@@ -435,542 +432,542 @@ VALUES(27, 7, 'Estadio Jose Alvalade', 50095, 'natural');
 INSERT INTO STADION
 VALUES(28, 7, 'Estadio Municipal de Braga', 30286, 'natural');
 
-INSERT INTO LICENȚA
+INSERT INTO LICENTA
 VALUES(1, 'Continental PRO License', 100);
 
-INSERT INTO LICENȚA
+INSERT INTO LICENTA
 VALUES(2, 'Continental A License', 60);
 
-INSERT INTO LICENȚA
+INSERT INTO LICENTA
 VALUES(3, 'Continental B License', 15);
 
 INSERT INTO ANTRENOR
-VALUES(1, 'Pep Guardiola', 1, '1971-01-18');
+VALUES(1, 'Pep Guardiola', 1, TO_DATE('1971-01-18', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(2, 'Jurgen Klopp', 1, '1967-06-16');
+VALUES(2, 'Jurgen Klopp', 1, TO_DATE('1967-06-16', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(3, 'Thomas Tuchel', 1, '1973-08-29');
+VALUES(3, 'Thomas Tuchel', 1, TO_DATE('1973-08-29', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(4, 'Antonio Conte', 1, '1969-07-31');
+VALUES(4, 'Antonio Conte', 1, TO_DATE('1969-07-31', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(5, 'Mikel Arteta', 1, '1982-03-26');
+VALUES(5, 'Mikel Arteta', 1, TO_DATE('1982-03-26', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(6, 'Ralf Rangnick', 1, '1958-06-29');
+VALUES(6, 'Ralf Rangnick', 1, TO_DATE('1958-06-29', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(7, 'David Moyes', 1, '1963-04-25');
+VALUES(7, 'David Moyes', 1, TO_DATE('1963-04-25', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(8, 'Brendan Rodgers', 1, '1973-01-26');
+VALUES(8, 'Brendan Rodgers', 1, TO_DATE('1973-01-26', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(9, 'Graham Potter', 1, '1975-05-20');
+VALUES(9, 'Graham Potter', 1, TO_DATE('1975-05-20', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(10, 'Bruno Lage', 1, '1976-05-12');
+VALUES(10, 'Bruno Lage', 1, TO_DATE('1976-05-12', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(11, 'Eddie Howe', 1, '1977-11-29');
+VALUES(11, 'Eddie Howe', 1, TO_DATE('1977-11-29', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(12, 'Patrick Vieira', 1, '1976-06-23');
+VALUES(12, 'Patrick Vieira', 1, TO_DATE('1976-06-23', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(13, 'Thomas Frank', 1, '1973-10-09');
+VALUES(13, 'Thomas Frank', 1, TO_DATE('1973-10-09', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(14, 'Steven Gerrard', 1, '1980-05-30');
+VALUES(14, 'Steven Gerrard', 1, TO_DATE('1980-05-30', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(15, 'Ralph Hasenhuttl', 1, '1967-08-09');
+VALUES(15, 'Ralph Hasenhuttl', 1, TO_DATE('1967-08-09', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(16, 'Frank Lampard', 1, '1978-06-20');
+VALUES(16, 'Frank Lampard', 1, TO_DATE('1978-06-20', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(17, 'Jesse Marsch', 1, '1973-11-08');
+VALUES(17, 'Jesse Marsch', 1, TO_DATE('1973-11-08', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(18, 'Sean Dyche', 1, '1971-06-28');
+VALUES(18, 'Sean Dyche', 1, TO_DATE('1971-06-28', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(19, 'Rob Edwards', 1, '1982-12-25');
+VALUES(19, 'Rob Edwards', 1, TO_DATE('1982-12-25', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(20, 'Dean Smith', 1, '1971-03-19');
+VALUES(20, 'Dean Smith', 1, TO_DATE('1971-03-19', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(21, 'Marco Silva', 1, '1977-07-12');
+VALUES(21, 'Marco Silva', 1, TO_DATE('1977-07-12', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(22, 'Parker Scott', 1, '1980-10-13');
+VALUES(22, 'Parker Scott', 1, TO_DATE('1980-10-13', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(23, 'Corberan Carlos', 1, '1983-04-07');
+VALUES(23, 'Corberan Carlos', 1, TO_DATE('1983-04-07', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(24, 'Cooper Steven', 1, '1979-12-10');
+VALUES(24, 'Cooper Steven', 1, TO_DATE('1979-12-10', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(25, 'Paul Heckingbottom', 1, '1977-07-17');
+VALUES(25, 'Paul Heckingbottom', 1, TO_DATE('1977-07-17', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(26, 'Jones Nathan', 1, '1973-05-28');
+VALUES(26, 'Jones Nathan', 1, TO_DATE('1973-05-28', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(27, 'Wilder Chris', 1, '1967-09-23');
+VALUES(27, 'Wilder Chris', 1, TO_DATE('1967-09-23', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(28, 'Mowbray Tony', 1, '1963-11-22');
+VALUES(28, 'Mowbray Tony', 1, TO_DATE('1963-11-22', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(29, 'Rowett Gary', 1, '1974-03-06');
+VALUES(29, 'Rowett Gary', 1, TO_DATE('1974-03-06', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(30, 'Bruce Steve', 1, '1960-12-31');
+VALUES(30, 'Bruce Steve', 1, TO_DATE('1960-12-31', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(31, 'Warburton Mark', 1, '1962-09-06');
+VALUES(31, 'Warburton Mark', 1, TO_DATE('1962-09-06', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(32, 'Robins Mark', 1, '1969-12-22');
+VALUES(32, 'Robins Mark', 1, TO_DATE('1969-12-22', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(33, 'Lowe Ryan', 1, '1978-09-18');
+VALUES(33, 'Lowe Ryan', 1, TO_DATE('1978-09-18', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(34, 'O`Neill Michael', 1, '1969-07-05');
+VALUES(34, 'O`Neill Michael', 1, TO_DATE('1969-07-05', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(35, 'Martin Russell', 1, '1986-01-04');
+VALUES(35, 'Martin Russell', 1, TO_DATE('1986-01-04', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(36, 'Critchley Neil', 1, '1978-10-18');
+VALUES(36, 'Critchley Neil', 1, TO_DATE('1978-10-18', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(37, 'Pearson Nigel', 1, '1963-08-21');
+VALUES(37, 'Pearson Nigel', 1, TO_DATE('1963-08-21', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(38, 'Morison Steve', 1, '1983-08-29');
+VALUES(38, 'Morison Steve', 1, TO_DATE('1983-08-29', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(39, 'Arveladze Shota', 1, '1973-02-22');
+VALUES(39, 'Arveladze Shota', 1, TO_DATE('1973-02-22', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(40, 'Bowyer Lee', 1, '1977-01-03');
+VALUES(40, 'Bowyer Lee', 1, TO_DATE('1977-01-03', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(41, 'Ince Paul', 1, '1967-10-21');
+VALUES(41, 'Ince Paul', 1, TO_DATE('1967-10-21', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(42, 'McCann Grant', 1, '1980-04-14');
+VALUES(42, 'McCann Grant', 1, TO_DATE('1980-04-14', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(43, 'Rooney Wayne', 1, '1985-10-24');
+VALUES(43, 'Rooney Wayne', 1, TO_DATE('1985-10-24', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(44, 'Devaney Martin', 1, '1980-06-01');
+VALUES(44, 'Devaney Martin', 1, TO_DATE('1980-06-01', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(45, 'Marco Rose', 1, '1976-09-11');
+VALUES(45, 'Marco Rose', 1, TO_DATE('1976-09-11', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(46, 'Julian Nagelsmann', 1, '1987-07-23');
+VALUES(46, 'Julian Nagelsmann', 1, TO_DATE('1987-07-23', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(47, 'Seoane Gerardo', 1, '1978-10-30');
+VALUES(47, 'Seoane Gerardo', 1, TO_DATE('1978-10-30', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(48, 'Tedesco Domenico', 1, '1985-09-12');
+VALUES(48, 'Tedesco Domenico', 1, TO_DATE('1985-09-12', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(49, 'Fischer Urs', 1, '1966-02-20');
+VALUES(49, 'Fischer Urs', 1, TO_DATE('1966-02-20', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(50, 'Streich Christian', 1, '1965-06-11');
+VALUES(50, 'Streich Christian', 1, TO_DATE('1965-06-11', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(51, 'Baumgart Steffen', 1, '1972-01-05');
+VALUES(51, 'Baumgart Steffen', 1, TO_DATE('1972-01-05', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(52, 'Svensson Bo', 1, '1979-08-04');
+VALUES(52, 'Svensson Bo', 1, TO_DATE('1979-08-04', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(53, 'Hoeness Sebastian', 1, '1982-05-12');
+VALUES(53, 'Hoeness Sebastian', 1, TO_DATE('1982-05-12', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(54, 'Hutter Adi', 1, '1970-11-02');
+VALUES(54, 'Hutter Adi', 1, TO_DATE('1970-11-02', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(55, 'Glasner Oliver', 1, '1974-08-28');
+VALUES(55, 'Glasner Oliver', 1, TO_DATE('1974-08-28', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(56, 'Kovac Niko', 1, '1971-10-15');
+VALUES(56, 'Kovac Niko', 1, TO_DATE('1971-10-15', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(57, 'Thomas Reis', 1, '1973-10-04');
+VALUES(57, 'Thomas Reis', 1, TO_DATE('1973-10-04', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(58, 'Weinzierl Markus', 1, '1974-12-28');
+VALUES(58, 'Weinzierl Markus', 1, TO_DATE('1974-12-28', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(59, 'Matarazzo Pellegrino', 1, '1977-11-28');
+VALUES(59, 'Matarazzo Pellegrino', 1, TO_DATE('1977-11-28', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(60, 'Magath Felix', 1, '1953-07-26');
+VALUES(60, 'Magath Felix', 1, TO_DATE('1953-07-26', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(61, 'Kostmann Marco', 1, '1966-04-12');
+VALUES(61, 'Kostmann Marco', 1, TO_DATE('1966-04-12', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(62, 'Leitl Stefan', 1, '1977-08-29');
+VALUES(62, 'Leitl Stefan', 1, TO_DATE('1977-08-29', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(63, 'Mauricio Pochettino', 1, '1972-03-02');
+VALUES(63, 'Mauricio Pochettino', 1, TO_DATE('1972-03-02', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(64, 'Desio Jorge', 1, '1968-07-16');
+VALUES(64, 'Desio Jorge', 1, TO_DATE('1968-07-16', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(65, 'Clement Philippe', 1, '1974-03-22');
+VALUES(65, 'Clement Philippe', 1, TO_DATE('1974-03-22', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(66, 'Genesio Bruno', 1, '1966-09-01');
+VALUES(66, 'Genesio Bruno', 1, TO_DATE('1966-09-01', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(67, 'Galtier Christophe', 1, '1966-08-28');
+VALUES(67, 'Galtier Christophe', 1, TO_DATE('1966-08-28', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(68, 'Stephan Julien', 1, '1980-09-18');
+VALUES(68, 'Stephan Julien', 1, TO_DATE('1980-09-18', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(69, 'Haise Franck', 1, '1971-04-15');
+VALUES(69, 'Haise Franck', 1, TO_DATE('1971-04-15', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(70, 'Bosz Peter', 1, '1963-11-21');
+VALUES(70, 'Bosz Peter', 1, TO_DATE('1963-11-21', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(71, 'Kombouare Antoine', 1, '1963-11-16');
+VALUES(71, 'Kombouare Antoine', 1, TO_DATE('1963-11-16', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(72, 'Gourvennec Jocelyn', 1, '1972-03-22');
+VALUES(72, 'Gourvennec Jocelyn', 1, TO_DATE('1972-03-22', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(73, 'Der Zakarian Michel', 1, '1963-02-18');
+VALUES(73, 'Der Zakarian Michel', 1, TO_DATE('1963-02-18', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(74, 'Garcia Junyent Oscar', 1, '1973-04-26');
+VALUES(74, 'Garcia Junyent Oscar', 1, TO_DATE('1973-04-26', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(75, 'Dall`Oglio Olivier', 1, '1964-05-16');
+VALUES(75, 'Dall`Oglio Olivier', 1, TO_DATE('1964-05-16', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(76, 'Baticle Gerald', 1, '1969-10-10');
+VALUES(76, 'Baticle Gerald', 1, TO_DATE('1969-10-10', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(77, 'Irles Bruno', 1, '1975-08-16');
+VALUES(77, 'Irles Bruno', 1, TO_DATE('1975-08-16', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(78, 'Christophe Pelissier', 1, '1965-10-05');
+VALUES(78, 'Christophe Pelissier', 1, TO_DATE('1965-10-05', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(79, 'Gastien Pascal', 1, '1963-12-02');
+VALUES(79, 'Gastien Pascal', 1, TO_DATE('1963-12-02', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(80, 'Dupraz Pascal', 1, '1962-09-19');
+VALUES(80, 'Dupraz Pascal', 1, TO_DATE('1962-09-19', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(81, 'Frederic Antonetti', 1, '1961-08-19');
+VALUES(81, 'Frederic Antonetti', 1, TO_DATE('1961-08-19', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(82, 'David Guion', 1, '1967-09-30');
+VALUES(82, 'David Guion', 1, TO_DATE('1967-09-30', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(83, 'Ancelotti Carlo', 1, '1959-06-10');
+VALUES(83, 'Ancelotti Carlo', 1, TO_DATE('1959-06-10', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(84, 'Xavi', 1, '1980-01-25');
+VALUES(84, 'Xavi', 1, TO_DATE('1980-01-25', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(85, 'Simeone Diego', 1, '1970-04-28');
+VALUES(85, 'Simeone Diego', 1, TO_DATE('1970-04-28', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(86, 'Lopetegui Julen', 1, '1966-08-28');
+VALUES(86, 'Lopetegui Julen', 1, TO_DATE('1966-08-28', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(87, 'Pellegrini Manuel', 1, '1953-09-16');
+VALUES(87, 'Pellegrini Manuel', 1, TO_DATE('1953-09-16', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(88, 'Alguacil Imanol', 1, '1971-07-04');
+VALUES(88, 'Alguacil Imanol', 1, TO_DATE('1971-07-04', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(89, 'Emery Unai', 1, '1971-11-03');
+VALUES(89, 'Emery Unai', 1, TO_DATE('1971-11-03', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(90, 'Marcelino', 1, '1965-08-14');
+VALUES(90, 'Marcelino', 1, TO_DATE('1965-08-14', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(91, 'Bordalas Jimenez Jose', 1, '1964-03-05');
+VALUES(91, 'Bordalas Jimenez Jose', 1, TO_DATE('1964-03-05', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(92, 'Jagoba Arrasate', 1, '1978-04-22');
+VALUES(92, 'Jagoba Arrasate', 1, TO_DATE('1978-04-22', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(93, 'Coudet Eduardo', 1, '1974-09-12');
+VALUES(93, 'Coudet Eduardo', 1, TO_DATE('1974-09-12', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(94, 'Iraola Andoni', 1, '1982-06-22');
+VALUES(94, 'Iraola Andoni', 1, TO_DATE('1982-06-22', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(95, 'Rodriguez Francisco', 1, '1978-06-17');
+VALUES(95, 'Rodriguez Francisco', 1, TO_DATE('1978-06-17', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(96, 'Blanco Luis', 1, '1978-05-31');
+VALUES(96, 'Blanco Luis', 1, TO_DATE('1978-05-31', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(97, 'Flores Quique', 1, '1965-02-05');
+VALUES(97, 'Flores Quique', 1, TO_DATE('1965-02-05', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(98, 'Aguirre Javier', 1, '1958-12-01');
+VALUES(98, 'Aguirre Javier', 1, TO_DATE('1958-12-01', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(99, 'Sergio', 1, '1976-11-10');
+VALUES(99, 'Sergio', 1, TO_DATE('1976-11-10', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(100, 'Karanka Aitor', 1, '1973-08-18');
+VALUES(100, 'Karanka Aitor', 1, TO_DATE('1973-08-18', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(101, 'Lisci Alessio', 1, '1985-04-04');
+VALUES(101, 'Lisci Alessio', 1, TO_DATE('1985-04-04', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(102, 'Velazquez Julio', 1, '1981-05-10');
+VALUES(102, 'Velazquez Julio', 1, TO_DATE('1981-05-10', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(103, 'Pioli Stefano', 1, '1965-10-19');
+VALUES(103, 'Pioli Stefano', 1, TO_DATE('1965-10-19', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(104, 'Inzaghi Simone', 1, '1976-04-05');
+VALUES(104, 'Inzaghi Simone', 1, TO_DATE('1976-04-05', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(105, 'Spalletti Luciano', 1, '1959-03-07');
+VALUES(105, 'Spalletti Luciano', 1, TO_DATE('1959-03-07', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(106, 'Allegri Massimiliano', 1, '1967-08-11');
+VALUES(106, 'Allegri Massimiliano', 1, TO_DATE('1967-08-11', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(107, 'Sarri Maurizio', 1, '1959-01-10');
+VALUES(107, 'Sarri Maurizio', 1, TO_DATE('1959-01-10', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(108, 'Mourinho Jose', 1, '1963-01-26');
+VALUES(108, 'Mourinho Jose', 1, TO_DATE('1963-01-26', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(109, 'Italiano Vincenzo', 1, '1977-12-10');
+VALUES(109, 'Italiano Vincenzo', 1, TO_DATE('1977-12-10', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(110, 'Gasperini Gian Piero', 1, '1958-01-26');
+VALUES(110, 'Gasperini Gian Piero', 1, TO_DATE('1958-01-26', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(111, 'Tudor Igor', 1, '1978-04-16');
+VALUES(111, 'Tudor Igor', 1, TO_DATE('1978-04-16', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(112, 'Juric Ivan', 1, '1975-08-25');
+VALUES(112, 'Juric Ivan', 1, TO_DATE('1975-08-25', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(113, 'Dionisi Alessio', 1, '1980-04-01');
+VALUES(113, 'Dionisi Alessio', 1, TO_DATE('1980-04-01', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(114, 'Cioffi Gabriele', 1, '1975-09-30');
+VALUES(114, 'Cioffi Gabriele', 1, TO_DATE('1975-09-30', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(115, 'Mihajlovic Sinisa', 1, '1969-02-20');
+VALUES(115, 'Mihajlovic Sinisa', 1, TO_DATE('1969-02-20', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(116, 'Andreazzoli Aurelio', 1, '1953-11-05');
+VALUES(116, 'Andreazzoli Aurelio', 1, TO_DATE('1953-11-05', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(117, 'Giampaolo Marco', 1, '1967-08-02');
+VALUES(117, 'Giampaolo Marco', 1, TO_DATE('1967-08-02', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(118, 'Motta Thiago', 1, '1982-08-28');
+VALUES(118, 'Motta Thiago', 1, TO_DATE('1982-08-28', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(119, 'Nicola Davide', 1, '1973-03-05');
+VALUES(119, 'Nicola Davide', 1, TO_DATE('1973-03-05', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(120, 'Agostini Alessandro', 1, '1979-07-23');
+VALUES(120, 'Agostini Alessandro', 1, TO_DATE('1979-07-23', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(121, 'Blessin Alexander', 1, '1973-05-28');
+VALUES(121, 'Blessin Alexander', 1, TO_DATE('1973-05-28', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(122, 'Soncin Andrea', 1, '1978-09-05');
+VALUES(122, 'Soncin Andrea', 1, TO_DATE('1978-09-05', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(123, 'Petrescu Dan', 1, '1967-12-22');
+VALUES(123, 'Petrescu Dan', 1, TO_DATE('1967-12-22', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(124, 'Petrea Anton', 1, '1975-03-09');
+VALUES(124, 'Petrea Anton', 1, TO_DATE('1975-03-09', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(125, 'Reghecampf Laurentiu', 1, '1975-09-19');
+VALUES(125, 'Reghecampf Laurentiu', 1, TO_DATE('1975-09-19', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(126, 'Prepelita Andrei', 1, '1985-12-08');
+VALUES(126, 'Prepelita Andrei', 1, TO_DATE('1985-12-08', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(127, 'Falina Constantin', 1, '1975-02-18');
+VALUES(127, 'Falina Constantin', 1, TO_DATE('1975-02-18', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(128, 'Andone Bogdan', 1, '1975-01-07');
+VALUES(128, 'Andone Bogdan', 1, TO_DATE('1975-01-07', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(129, 'Ciobanu Mihai', 1, '1960-05-27');
+VALUES(129, 'Ciobanu Mihai', 1, TO_DATE('1960-05-27', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(130, 'Badea Ionut', 1, '1975-10-14');
+VALUES(130, 'Badea Ionut', 1, TO_DATE('1975-10-14', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(131, 'Mutu Adrian', 1, '1979-01-08');
+VALUES(131, 'Mutu Adrian', 1, TO_DATE('1979-01-08', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(132, 'Bergodi Cristiano', 1, '1964-10-14');
+VALUES(132, 'Bergodi Cristiano', 1, TO_DATE('1964-10-14', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(133, 'Sandoi Emil', 1, '1965-03-01');
+VALUES(133, 'Sandoi Emil', 1, TO_DATE('1965-03-01', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(134, 'Napoli Nicolo', 1, '1962-02-07');
+VALUES(134, 'Napoli Nicolo', 1, TO_DATE('1962-02-07', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(135, 'Stoica Marius', 1, '1969-08-23');
+VALUES(135, 'Stoica Marius', 1, TO_DATE('1969-08-23', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(136, 'Dusan ml. Uhrin', 1, '1967-10-11');
+VALUES(136, 'Dusan ml. Uhrin', 1, TO_DATE('1967-10-11', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(137, 'Ene John', 1, '1970-10-10');
+VALUES(137, 'Ene John', 1, TO_DATE('1970-10-10', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(138, 'Flavius Boroncoi', 1, '1976-06-05');
+VALUES(138, 'Flavius Boroncoi', 1, TO_DATE('1976-06-05', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(139, 'Constantin Nicolae', 1, '1973-12-09');
+VALUES(139, 'Constantin Nicolae', 1, TO_DATE('1973-12-09', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(140, 'Falub Adrian', 1, '1971-09-08');
+VALUES(140, 'Falub Adrian', 1, TO_DATE('1971-09-08', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(141, 'Maldarasanu Marius Constantin', 1, '1975-04-19');
+VALUES(141, 'Maldarasanu Marius Constantin', 1, TO_DATE('1975-04-19', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(142, 'Ion Ion', 1, '1954-06-21');
+VALUES(142, 'Ion Ion', 1, TO_DATE('1954-06-21', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(143, 'Zicu Ianis', 1, '1983-10-23');
+VALUES(143, 'Zicu Ianis', 1, TO_DATE('1983-10-23', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(144, 'Mihalcea Adrian', 1, '1976-05-24');
+VALUES(144, 'Mihalcea Adrian', 1, TO_DATE('1976-05-24', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(145, 'Valentin Suciu', 1, '1980-09-25');
+VALUES(145, 'Valentin Suciu', 1, TO_DATE('1980-09-25', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(146, 'Cristian Pustai', 1, '1967-10-12');
+VALUES(146, 'Cristian Pustai', 1, TO_DATE('1967-10-12', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(147, 'Dragos Militaru', 2, '1990-03-02');
+VALUES(147, 'Dragos Militaru', 2, TO_DATE('1990-03-02', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(148, 'Maldarasanu Marius', 1, '1975-04-19');
+VALUES(148, 'Maldarasanu Marius', 1, TO_DATE('1975-04-19', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(149, 'Rada Marian', 1, '1960-05-14');
+VALUES(149, 'Rada Marian', 1, TO_DATE('1960-05-14', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(150, 'Fabian Florin', 1, '1976-06-04');
+VALUES(150, 'Fabian Florin', 1, TO_DATE('1976-06-04', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(151, 'Tanase Viorel', 1, '1970-10-07');
+VALUES(151, 'Tanase Viorel', 1, TO_DATE('1970-10-07', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(152, 'Beza Eugen', 1, '1978-07-01');
+VALUES(152, 'Beza Eugen', 1, TO_DATE('1978-07-01', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(153, 'Nimeni Nimenescu', 1, '1971-01-01');
+VALUES(153, 'Nimeni Nimenescu', 1, TO_DATE('1971-01-01', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(154, 'Calin Moldovan', 1, '1967-08-08');
+VALUES(154, 'Calin Moldovan', 1, TO_DATE('1967-08-08', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(155, 'Leonard Strizu', 1, '1967-08-26');
+VALUES(155, 'Leonard Strizu', 1, TO_DATE('1967-08-26', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(156, 'Pustai Cristian', 1, '1965-05-05');
+VALUES(156, 'Pustai Cristian', 1, TO_DATE('1965-05-05', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(157, 'Laurentiu Ivan', 1, '1979-06-08');
+VALUES(157, 'Laurentiu Ivan', 1, TO_DATE('1979-06-08', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(158, 'Radu Alexandru', 1, '1978-08-09');
+VALUES(158, 'Radu Alexandru', 1, TO_DATE('1978-08-09', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(159, 'Conceicao Sergio', 1, '1974-11-15');
+VALUES(159, 'Conceicao Sergio', 1, TO_DATE('1974-11-15', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(160, 'Amorim Ruben', 1, '1985-01-27');
+VALUES(160, 'Amorim Ruben', 1, TO_DATE('1985-01-27', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(161, 'Verissimo Nelson', 1, '1977-04-17');
+VALUES(161, 'Verissimo Nelson', 1, TO_DATE('1977-04-17', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(162, 'Carvalhal Carlos', 1, '1965-12-04');
+VALUES(162, 'Carvalhal Carlos', 1, TO_DATE('1965-12-04', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(163, 'Soares Ricardo', 1, '1974-11-11');
+VALUES(163, 'Soares Ricardo', 1, TO_DATE('1974-11-11', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(164, 'Pepa', 1, '1980-12-14');
+VALUES(164, 'Pepa', 1, TO_DATE('1980-12-14', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(165, 'Silva Mario', 1, '1977-04-24');
+VALUES(165, 'Silva Mario', 1, TO_DATE('1977-04-24', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(166, 'Silva Rui', 1, '1977-03-14');
+VALUES(166, 'Silva Rui', 1, TO_DATE('1977-03-14', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(167, 'Pinheiro Bruno', 1, '1976-10-30');
+VALUES(167, 'Pinheiro Bruno', 1, TO_DATE('1976-10-30', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(168, 'Seabra Vasco', 1, '1983-09-15');
+VALUES(168, 'Seabra Vasco', 1, TO_DATE('1983-09-15', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(169, 'Peixoto Cesar', 1, '1980-05-12');
+VALUES(169, 'Peixoto Cesar', 1, TO_DATE('1980-05-12', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(170, 'Petit', 1, '1976-09-25');
+VALUES(170, 'Petit', 1, TO_DATE('1976-09-25', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(171, 'Paulo Sergio', 1, '1968-02-19');
+VALUES(171, 'Paulo Sergio', 1, TO_DATE('1968-02-19', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(172, 'Pacheco Alvaro', 1, '1971-07-25');
+VALUES(172, 'Pacheco Alvaro', 1, TO_DATE('1971-07-25', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(173, 'Evangelista Armando', 1, '1973-11-03');
+VALUES(173, 'Evangelista Armando', 1, TO_DATE('1973-11-03', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(174, 'Sa Pinto Ricardo', 1, '1972-10-10');
+VALUES(174, 'Sa Pinto Ricardo', 1, TO_DATE('1972-10-10', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(175, 'Campos Nuno', 1, '1975-04-20');
+VALUES(175, 'Campos Nuno', 1, TO_DATE('1975-04-20', 'YYYY-MM-DD'));
 
 INSERT INTO ANTRENOR
-VALUES(176, 'Candido Filipe', 1, '1978-08-09');
+VALUES(176, 'Candido Filipe', 1, TO_DATE('1978-08-09', 'YYYY-MM-DD'));
 
 INSERT INTO ECHIPA
 VALUES(1, 1, 'Manchester City', 1880, 36, 1);
@@ -5723,57 +5720,6 @@ VALUES(703, 'Lica', 176, 'mijlocas', 703, 'stang');
 
 INSERT INTO JUCATOR
 VALUES(704, 'Ndour Alioune', 176, 'atacant', 704, 'stang');
-
-INSERT INTO SCOR
-VALUES(1, 2, 0);
-
-INSERT INTO SCOR
-VALUES(2, 2, 1);
-
-INSERT INTO SCOR
-VALUES(3, 1, 0);
-
-INSERT INTO SCOR
-VALUES(4, 1, 1);
-
-INSERT INTO SCOR
-VALUES(5, 2, 2);
-
-INSERT INTO SCOR
-VALUES(6, 0, 1);
-
-INSERT INTO SCOR
-VALUES(7, 0, 2);
-
-INSERT INTO SCOR
-VALUES(8, 1, 2);
-
-INSERT INTO SCOR
-VALUES(9, 1, 3);
-
-INSERT INTO SCOR
-VALUES(10, 0, 3);
-
-INSERT INTO SCOR
-VALUES(11, 2, 3);
-
-INSERT INTO SCOR
-VALUES(12, 3, 0);
-
-INSERT INTO SCOR
-VALUES(13, 3, 1);
-
-INSERT INTO SCOR
-VALUES(14, 3, 2);
-
-INSERT INTO SCOR
-VALUES(15, 3, 3);
-
-INSERT INTO SCOR
-VALUES(16, 0, 0);
-
-INSERT INTO SCOR
-VALUES(17, 8, 2);
 
 INSERT INTO PARTIDA
 VALUES(1, 1, 2, 1, 2, 0, 40000);
