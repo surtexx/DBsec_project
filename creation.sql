@@ -5284,7 +5284,7 @@ INSERT INTO JUCATOR
 VALUES(558, 'Gugu Costinel', 140, 'fundas', 558, 'stang');
 
 INSERT INTO JUCATOR
-VALUES(559, 'Ciobanu-Vanghele Marius Florian', 140, 'mijlocas', 559, 'stang');
+VALUES(559, 'Ciobanu-Vanghele Marius', 140, 'mijlocas', 559, 'stang');
 
 INSERT INTO JUCATOR
 VALUES(560, 'Balgiu Cristian', 140, 'atacant', 560, 'drept');
@@ -5569,7 +5569,7 @@ INSERT INTO JUCATOR
 VALUES(653, 'Trmal Matous', 164, 'portar', 653, 'stang');
 
 INSERT INTO JUCATOR
-VALUES(654, 'Oliveira Fernandes Jorge Filipe', 164, 'fundas', 654, 'drept');
+VALUES(654, 'Oliveira Fernandes Jorge', 164, 'fundas', 654, 'drept');
 
 INSERT INTO JUCATOR
 VALUES(655, 'Semedo Alfa', 164, 'mijlocas', 655, 'stang');
@@ -5629,7 +5629,7 @@ INSERT INTO JUCATOR
 VALUES(673, 'Ferreira Andre', 169, 'portar', 673, 'drept');
 
 INSERT INTO JUCATOR
-VALUES(674, 'Ferreira Fonseca Fernando Manuel', 169, 'fundas', 674, 'drept');
+VALUES(674, 'Ferreira Fonseca Fernando', 169, 'fundas', 674, 'drept');
 
 INSERT INTO JUCATOR
 VALUES(675, 'Gaitan Nicolas', 169, 'mijlocas', 675, 'stang');
