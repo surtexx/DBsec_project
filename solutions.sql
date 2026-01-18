@@ -91,6 +91,34 @@ WHERE object_name = 'CAMPIONAT';
 -- 4. Management of Database Users and Computational Resources
 --  b. Implementing the identity management configuration in the database
 
+CREATE USER adm1 IDENTIFIED BY adm1;
+CREATE USER adm2 IDENTIFIED BY adm2;
+CREATE USER adm3 IDENTIFIED BY adm3;
+CREATE USER mod1 IDENTIFIED BY mod1;
+CREATE USER mod2 IDENTIFIED BY mod2;
+CREATE USER mod3 IDENTIFIED BY mod3;
+
+create profile profil_admin limit
+    sessions_per_user 1
+    password_life_time 60
+    failed_login_attempts 3
+    cpu_per_call 7000
+    idle_time 10;
+
+create profile profil_moderator limit
+    sessions_per_user 2
+    password_life_time 60
+    failed_login_attempts 3
+    cpu_per_call 7000
+    idle_time 10;
+    
+ALTER USER adm1 profile profil_admin;
+ALTER USER adm2 profile profil_admin;
+ALTER USER adm3 profile profil_admin;
+ALTER USER mod1 profile profil_moderator;
+ALTER USER mod2 profile profil_moderator;
+ALTER USER mod3 profile profil_moderator;
+
 -- 5. Privileges and Roles
 
 CREATE ROLE C##admin_campionat;
@@ -165,6 +193,13 @@ GRANT C##readonly_user TO C##moderator_campionat;
 GRANT C##moderator_jucator TO C##admin_jucator;
 GRANT C##moderator_echipa TO C##admin_echipa;
 GRANT C##moderator_campionat TO C##admin_campionat;
+
+GRANT C##admin_campionat TO adm1;
+GRANT C##admin_echipa TO adm2;
+GRANT C##admin_jucator TO adm3;
+GRANT C##moderator_campionat TO mod1;
+GRANT C##moderator_echipa TO mod2;
+GRANT C##moderator_jucator TO mod3;
 
 -- Test
 SELECT * 
