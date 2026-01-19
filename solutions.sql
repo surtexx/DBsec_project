@@ -1,4 +1,4 @@
--- 2. Data Encryption TODO
+-- 2. Data Encryption
 
 ALTER SESSION SET CONTAINER = CDB$ROOT;
 ALTER SYSTEM SET "_TABLESPACE_ENCRYPTION_DEFAULT_ALGORITHM" = 'AES256' SCOPE = BOTH SID = '*';
@@ -25,7 +25,6 @@ AUDIT INSERT, DELETE ON PARTIDA BY ACCESS;
 INSERT INTO PARTIDA
 VALUES(177, 176, 160, 27, 4, 3, 48519);
 DELETE FROM PARTIDA WHERE id_partida=177;
-SELECT ACTION_NAME, OBJ_NAME FROM dba_audit_trail;
 
 --  b.	Audit Triggers
 
@@ -211,3 +210,81 @@ WHERE grantee IN (
 );
 
 -- 6. Database Applications and Data Security
+--  b. SQL Injection
+
+CREATE OR REPLACE PROCEDURE get_echipa_vulnerabil (
+    p_nume_echipa IN VARCHAR2
+) IS
+    v_sql   VARCHAR2(4000);
+    c       SYS_REFCURSOR;
+    v_nume  ECHIPA.nume_echipa%TYPE;
+BEGIN
+    v_sql := 'SELECT nume_echipa FROM ECHIPA WHERE nume_echipa = '''
+             || p_nume_echipa || '''';
+
+    DBMS_OUTPUT.PUT_LINE('Execut: ' || v_sql);
+
+    OPEN c FOR v_sql;
+    LOOP
+        FETCH c INTO v_nume;
+        EXIT WHEN c%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('Echipa: ' || v_nume);
+    END LOOP;
+    CLOSE c;
+END;
+/
+
+-- Test
+SET SERVEROUTPUT ON;
+
+-- Vulnerabil
+BEGIN
+    get_echipa_vulnerabil(''' OR 1=1 --');
+END;
+/
+
+-- Sigur
+BEGIN
+    get_echipa_vulnerabil('Borussia Dortmund');
+END;
+/
+
+-- 7. Data masking
+
+CREATE OR REPLACE DIRECTORY masking_dir AS 'C:\Users\rober\Desktop\oracle19c\admin\mask';
+GRANT READ, WRITE ON directory masking_dir TO C##admin_campionat;
+GRANT READ, WRITE ON directory masking_dir TO C##admin_echipa;
+GRANT READ, WRITE ON directory masking_dir TO C##admin_jucator;
+GRANT READ, WRITE ON directory masking_dir TO C##moderator_campionat;
+GRANT READ, WRITE ON directory masking_dir TO C#moderator_echipa;
+GRANT READ, WRITE ON directory masking_dir TO C##moderator_jucator;
+
+CREATE OR REPLACE PACKAGE data_masking is
+    FUNCTION masking_nume_sponsor(nume VARCHAR2) return VARCHAR2;
+    FUNCTION masking_venit_anual_sponsor(venit_anual NUMBER) return VARCHAR2;
+end;
+/
+
+CREATE OR REPLACE PACKAGE BODY data_masking IS
+  FUNCTION masking_nume_sponsor (nume VARCHAR2) return VARCHAR2 IS
+    v_nume VARCHAR2(100);
+    v_len NUMBER;
+  BEGIN
+        v_nume := SUBSTR(nume, 1, 1);
+        SELECT LENGTH(nume) INTO v_len from dual;
+        v_nume := RPAD(v_nume, v_len, '*');
+        return v_nume;
+  END masking_nume_sponsor;
+  
+  FUNCTION masking_venit_anual_sponsor (venit_anual NUMBER) return VARCHAR2 IS
+    v_len NUMBER;
+  BEGIN
+    v_len := TRUNC(DBMS_RANDOM.VALUE(3, 11));
+    RETURN RPAD('$', v_len, '$');
+  END masking_venit_anual_sponsor;
+END;
+/
+
+-- Test
+SELECT data_masking.masking_nume_sponsor('Test') FROM dual;
+SELECT data_masking.masking_venit_anual_sponsor('1700000') FROM dual;
