@@ -97,19 +97,19 @@ CREATE USER mod1 IDENTIFIED BY mod1;
 CREATE USER mod2 IDENTIFIED BY mod2;
 CREATE USER mod3 IDENTIFIED BY mod3;
 
-create profile profil_admin limit
-    sessions_per_user 1
-    password_life_time 60
-    failed_login_attempts 3
-    cpu_per_call 7000
-    idle_time 10;
+CREATE PROFILE profil_admin LIMIT
+    SESSIONS_PER_USER 1
+    PASSWORD_LIFE_TIME 60
+    FAILED_LOGIN_ATTEMPTS 3
+    CPU_PER_CALL 7000
+    IDLE_TIME 10;
 
-create profile profil_moderator limit
-    sessions_per_user 2
-    password_life_time 60
-    failed_login_attempts 3
-    cpu_per_call 7000
-    idle_time 10;
+CREATE PROFILE profil_moderator limit
+    SESSIONS_PER_USER 2
+    PASSWORD_LIFE_TIME 60
+    FAILED_LOGIN_ATTEMPTS 3
+    CPU_PER_CALL 7000
+    IDLE_TIME 10;
     
 ALTER USER adm1 profile profil_admin;
 ALTER USER adm2 profile profil_admin;
